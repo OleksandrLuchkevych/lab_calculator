@@ -1,12 +1,12 @@
 import math
 
 def log_history(first_operand, operator, second_operand, result):
-    with open('./source/history_log.txt', 'a') as file:
+    with open('./lab_calculator/source/history_log.txt', 'a') as file:
         file.write(f"{first_operand} {operator} {second_operand} = {result}\n")
 
 def show_history():
     try:
-        with open('./source/history_log.txt', 'r') as file:
+        with open('./lab_calculator/source/history_log.txt', 'r') as file:
             return file.read()
     except FileNotFoundError:
         return "History is empty."
