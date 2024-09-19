@@ -25,7 +25,7 @@ def main():
         choice = input("Choose option (1-4): ")
 
         if choice == '1':
-            result, first_number, operator, second_number = calculator(decimal_places)
+            result, first_number, operator, second_number = calculator(decimal_places, memory_value)
             
             if result is not None:
                 choice_memory = input('Would you like to store result in memory (MS), add to memory (M+), clear memory (MC), or skip? ').upper()
@@ -33,17 +33,16 @@ def main():
                     case 'MS':
                         memory_value = result
                         print(f"Stored {result} in memory.")
-                        
-                        log_history(first_number, operator, second_number, result)
-                        print(f"Result: {result}")
-                
                     case 'M+':
                         memory_value += result
                         print(f"Added {result} to memory. New memory value: {memory_value}.")
                     case 'MC':
                         memory_value = 0
                         print("Memory cleared.")
-                
+
+                log_history(first_number, operator, second_number, result)
+                print(f"Result: {result}")
+
                 if input("Do you want to view history? (y/n): ").strip().lower() == 'y':
                     print(show_history())
             
