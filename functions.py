@@ -57,4 +57,4 @@ def calculator(decimal_places, memory_value):
             print("Error: division by zero!")
 
     print(f"{first_number} {operator} {second_number} = {result}")
-    return result, first_number, operator, second_number  # Return result and operands
+    return result, first_number, operator, second_number
